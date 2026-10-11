@@ -99,7 +99,7 @@ export default function EmojiRain() {
               onClick={() => setSelectedEmojis(set.emojis)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
                 JSON.stringify(selectedEmojis) === JSON.stringify(set.emojis)
-                  ? "bg-gold text-white"
+                  ? "bg-da-primary text-white"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
               }`}
             >
@@ -122,7 +122,7 @@ export default function EmojiRain() {
                 onClick={() => toggleEmoji(emoji)}
                 className={`text-2xl p-2 rounded-lg transition-all cursor-pointer ${
                   selectedEmojis.includes(emoji)
-                    ? "bg-gold/20 ring-2 ring-gold"
+                    ? "bg-da-primary/20 ring-2 ring-da-primary"
                     : "hover:bg-gray-100"
                 }`}
               >
@@ -144,7 +144,7 @@ export default function EmojiRain() {
             step="0.5"
             value={speed}
             onChange={(e) => setSpeed(Number(e.target.value))}
-            className="w-full accent-gold"
+            className="w-full accent-da-primary"
           />
         </div>
         <div>
@@ -157,7 +157,7 @@ export default function EmojiRain() {
             max="15"
             value={density}
             onChange={(e) => setDensity(Number(e.target.value))}
-            className="w-full accent-gold"
+            className="w-full accent-da-primary"
           />
         </div>
       </div>
@@ -169,7 +169,7 @@ export default function EmojiRain() {
           className={`px-8 py-3 rounded-full text-lg font-medium transition-colors cursor-pointer ${
             isRaining
               ? "bg-red-500 text-white hover:bg-red-600"
-              : "bg-gold text-white hover:bg-gold-dark"
+              : "bg-da-primary text-white hover:bg-da-primary-hover"
           } disabled:opacity-50 disabled:cursor-not-allowed`}
         >
           {isRaining ? "Stop Rain" : "Start Rain!"}

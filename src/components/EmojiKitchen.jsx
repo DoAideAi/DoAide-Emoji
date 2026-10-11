@@ -105,7 +105,7 @@ export default function EmojiKitchen() {
             onClick={() => toggle(emoji)}
             className={`text-2xl p-2 rounded-xl transition-all cursor-pointer ${
               selected.includes(emoji)
-                ? "bg-gold/20 ring-2 ring-gold scale-110"
+                ? "bg-da-primary/20 ring-2 ring-da-primary scale-110"
                 : "hover:bg-gray-100"
             }`}
           >
@@ -120,9 +120,9 @@ export default function EmojiKitchen() {
             <span>{selected[0]}</span>
             {selected.length === 2 && (
               <>
-                <span className="text-2xl text-gold font-bold">+</span>
+                <span className="text-2xl text-da-primary font-bold">+</span>
                 <span>{selected[1]}</span>
-                <span className="text-2xl text-gold font-bold">=</span>
+                <span className="text-2xl text-da-primary font-bold">=</span>
                 {mashup ? (
                   <span className="flex items-center">
                     {mashup.parts[0]}
@@ -167,7 +167,7 @@ export default function EmojiKitchen() {
               <button
                 key={i}
                 onClick={() => setSelected(s.parts)}
-                className="flex items-center gap-3 p-3 rounded-xl border border-gray-200 hover:border-gold/50 hover:bg-gold/5 transition-colors text-left cursor-pointer"
+                className="flex items-center gap-3 p-3 rounded-xl border border-gray-200 hover:border-da-primary/50 hover:bg-da-primary/5 transition-colors text-left cursor-pointer dark:border-gray-600"
               >
                 <span className="text-2xl">
                   {s.parts[0]}{s.parts[1]}
@@ -186,7 +186,7 @@ export default function EmojiKitchen() {
         <div>
           <button
             onClick={() => setShowAll(!showAll)}
-            className="text-sm text-gold hover:text-gold-dark font-medium cursor-pointer"
+            className="text-sm text-da-primary hover:text-da-primary-hover font-medium cursor-pointer"
           >
             {showAll ? "Hide" : "Browse"} all mashups ({Object.keys(MASHUP_MAP).length})
           </button>
@@ -196,7 +196,7 @@ export default function EmojiKitchen() {
                 <button
                   key={i}
                   onClick={() => setSelected(s.parts)}
-                  className="flex items-center gap-3 p-3 rounded-xl border border-gray-200 hover:border-gold/50 hover:bg-gold/5 transition-colors text-left cursor-pointer"
+                  className="flex items-center gap-3 p-3 rounded-xl border border-gray-200 hover:border-da-primary/50 hover:bg-da-primary/5 transition-colors text-left cursor-pointer dark:border-gray-600"
                 >
                   <span className="text-2xl">
                     {s.parts[0]}{s.parts[1]}

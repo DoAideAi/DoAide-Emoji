@@ -1,16 +1,16 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 
 const COLORS = [
-  "#F0B429", "#EF4444", "#3B82F6", "#10B981", "#8B5CF6",
+  "#0D9488", "#EF4444", "#3B82F6", "#10B981", "#8B5CF6",
   "#EC4899", "#F97316", "#14B8A6", "#000000", "#FFFFFF",
 ];
 
 const SHAPES = ["circle", "square", "triangle", "star", "heart"];
-const BG_COLORS = ["transparent", "#FFFFFF", "#F0B429", "#EF4444", "#3B82F6", "#10B981", "#000000"];
+const BG_COLORS = ["transparent", "#FFFFFF", "#0D9488", "#EF4444", "#3B82F6", "#10B981", "#000000"];
 
 export default function EmojiMaker() {
   const canvasRef = useRef(null);
-  const [color, setColor] = useState("#F0B429");
+  const [color, setColor] = useState("#0D9488");
   const [bgColor, setBgColor] = useState("transparent");
   const [tool, setTool] = useState("brush");
   const [brushSize, setBrushSize] = useState(8);
@@ -194,7 +194,7 @@ export default function EmojiMaker() {
                   key={t.id}
                   onClick={() => setTool(t.id)}
                   className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
-                    tool === t.id ? "bg-gold text-white" : "bg-gray-100 hover:bg-gray-200"
+                    tool === t.id ? "bg-da-primary text-white" : "bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600"
                   }`}
                 >
                   {t.icon} {t.label}
@@ -213,7 +213,7 @@ export default function EmojiMaker() {
               max="24"
               value={brushSize}
               onChange={(e) => setBrushSize(Number(e.target.value))}
-              className="w-full accent-gold"
+              className="w-full accent-da-primary"
             />
           </div>
 
@@ -289,7 +289,7 @@ export default function EmojiMaker() {
             </button>
             <button
               onClick={download}
-              className="px-6 py-2 rounded-full bg-gold text-white hover:bg-gold-dark text-sm font-medium cursor-pointer"
+              className="px-6 py-2 rounded-full bg-da-primary text-white hover:bg-da-primary-hover text-sm font-medium cursor-pointer"
             >
               Download PNG
             </button>

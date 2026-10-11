@@ -65,7 +65,7 @@ export default function EmojiSearch() {
         placeholder="Search emojis... (e.g. happy, fire, heart)"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold text-lg"
+        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-da-primary/50 focus:border-da-primary text-lg dark:bg-da-surface dark:border-gray-600 dark:text-da-text"
         autoFocus
       />
 
@@ -79,7 +79,7 @@ export default function EmojiSearch() {
               <button
                 key={i}
                 onClick={() => copy(emoji)}
-                className="text-2xl p-2 rounded-lg hover:bg-gold/10 transition-colors cursor-pointer"
+                className="text-2xl p-2 rounded-lg hover:bg-da-primary/10 transition-colors cursor-pointer"
                 title="Click to copy"
               >
                 {emoji}
@@ -103,7 +103,7 @@ export default function EmojiSearch() {
               className={`text-2xl p-2 rounded-lg transition-all cursor-pointer ${
                 copied === e.emoji
                   ? "bg-green-100 scale-110"
-                  : "hover:bg-gold/10"
+                  : "hover:bg-da-primary/10"
               }`}
               title={`${e.name} — click to copy`}
             >

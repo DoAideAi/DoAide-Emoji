@@ -75,7 +75,7 @@ export default function EmojiStats() {
         value={text}
         onChange={(e) => setText(e.target.value)}
         rows={5}
-        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold text-lg resize-y"
+        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-da-primary/50 focus:border-da-primary text-lg resize-y dark:bg-da-surface dark:border-gray-600 dark:text-da-text"
         autoFocus
       />
 
@@ -119,10 +119,10 @@ export default function EmojiStats() {
                   <span className="text-2xl">{emoji}</span>
                   <div className="flex-1">
                     <div
-                      className="h-6 bg-gold/20 rounded-full overflow-hidden"
+                      className="h-6 bg-da-primary/20 rounded-full overflow-hidden"
                     >
                       <div
-                        className="h-full bg-gold rounded-full transition-all"
+                        className="h-full bg-da-primary rounded-full transition-all"
                         style={{
                           width: `${(count / stats.total) * 100}%`,
                           minWidth: "1rem",

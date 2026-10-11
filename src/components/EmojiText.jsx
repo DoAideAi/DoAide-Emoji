@@ -106,7 +106,7 @@ export default function EmojiText() {
         placeholder="Type your text here..."
         value={text}
         onChange={(e) => setText(e.target.value)}
-        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold text-lg"
+        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-da-primary/50 focus:border-da-primary text-lg dark:bg-da-surface dark:border-gray-600 dark:text-da-text"
         maxLength={100}
         autoFocus
       />
@@ -118,7 +118,7 @@ export default function EmojiText() {
             onClick={() => setStyle(key)}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
               style === key
-                ? "bg-gold text-white"
+                ? "bg-da-primary text-white"
                 : "bg-gray-100 text-gray-600 hover:bg-gray-200"
             }`}
           >
@@ -135,7 +135,7 @@ export default function EmojiText() {
             className={`px-6 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
               copied
                 ? "bg-green-500 text-white"
-                : "bg-gold text-white hover:bg-gold-dark"
+                : "bg-da-primary text-white hover:bg-da-primary-hover"
             }`}
           >
             {copied ? "Copied!" : "Copy to Clipboard"}

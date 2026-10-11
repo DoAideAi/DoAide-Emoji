@@ -1,17 +1,18 @@
 export default function Header() {
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <header className="bg-white border-b border-gray-200 sticky top-0 z-50 dark:bg-da-surface dark:border-gray-700">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <a href="/" className="flex items-center gap-2 no-underline">
           <span className="text-2xl">😀</span>
-          <span className="text-xl font-bold text-gray-900">
-            DoAide <span className="text-gold">Emoji</span>
+          <span className="text-xl font-bold text-da-text dark:text-gray-100">
+            DoAide <span className="text-da-primary">|</span>{" "}
+            <span className="text-da-primary">Emoji</span>
           </span>
         </a>
         <div className="flex items-center gap-3">
           <a
             href="https://doaide.com"
-            className="text-sm text-gray-500 hover:text-gold transition-colors no-underline hidden sm:block"
+            className="text-sm text-gray-500 hover:text-da-primary transition-colors no-underline hidden sm:block dark:text-gray-400"
           >
             doaide.com
           </a>
@@ -31,7 +32,7 @@ function ShareButtons() {
         href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors"
+        className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors dark:hover:bg-gray-700"
         aria-label="Share on Twitter"
       >
         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -42,7 +43,7 @@ function ShareButtons() {
         href={`https://api.whatsapp.com/send?text=${encodeURIComponent(text + " " + url)}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors"
+        className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors dark:hover:bg-gray-700"
         aria-label="Share on WhatsApp"
       >
         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
