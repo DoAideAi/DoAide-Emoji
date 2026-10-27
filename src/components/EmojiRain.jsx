@@ -80,9 +80,9 @@ export default function EmojiRain() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">
+        <h1 className="text-2xl font-bold text-gray-900 mb-2">
           Emoji Rain
-        </h2>
+        </h1>
         <p className="text-gray-500">
           Pick your emojis and watch them rain down! Pure fun.
         </p>

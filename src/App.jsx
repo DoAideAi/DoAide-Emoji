@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import TabNav from "./components/TabNav";
 import EmojiSearch from "./components/EmojiSearch";
@@ -7,6 +7,8 @@ import EmojiText from "./components/EmojiText";
 import EmojiMaker from "./components/EmojiMaker";
 import EmojiStats from "./components/EmojiStats";
 import EmojiRain from "./components/EmojiRain";
+import useSEO from "./hooks/useSEO";
+import { routes } from "./routeMeta";
 
 const TOOLS = {
   search: EmojiSearch,
@@ -23,9 +25,29 @@ const OTHER_PRODUCTS = [
   { name: "Text", url: "https://text.doaide.com", desc: "Text Utilities" },
 ];
 
+// Each tool has its own URL so it can be indexed; unknown paths show search.
+function currentPath() {
+  const path = window.location.pathname.replace(/\/+$/, "") || "/";
+  return routes.some((r) => r.path === path) ? path : "/";
+}
+
 export default function App() {
-  const [activeTab, setActiveTab] = useState("search");
+  const [path, setPath] = useState(currentPath);
+  const activeTab = (routes.find((r) => r.path === path) ?? routes[0]).tool;
   const ActiveTool = TOOLS[activeTab];
+  useSEO(path);
+
+  useEffect(() => {
+    const onPop = () => setPath(currentPath());
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, []);
+
+  const setActiveTab = (tool) => {
+    const next = routes.find((r) => r.tool === tool).path;
+    if (next !== path) window.history.pushState(null, "", next);
+    setPath(next);
+  };
 
   return (
     <div className="min-h-screen bg-da-bg dark:bg-da-bg">

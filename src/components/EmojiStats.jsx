@@ -62,9 +62,9 @@ export default function EmojiStats() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">
+        <h1 className="text-2xl font-bold text-gray-900 mb-2">
           Emoji Stats
-        </h2>
+        </h1>
         <p className="text-gray-500">
           Paste text to see emoji usage statistics and sentiment analysis.
         </p>
